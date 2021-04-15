@@ -362,7 +362,10 @@ module.exports = function (/**String*/ input, /** object */ options) {
                         if (i < items.length) {
                             var filepath = items[i];
                             var p = pth.relative(localPath, filepath).split("\\").join("/"); //windows fix
-                            p = p.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^\x20-\x7E]/g, ""); // accent fix
+                            p = p
+                                .normalize("NFD")
+                                .replace(/[\u0300-\u036f]/g, "")
+                                .replace(/[^\x20-\x7E]/g, ""); // accent fix
                             if (filter(p)) {
                                 fs.stat(filepath, function (er0, stats) {
                                     if (er0) callback(undefined, er0);

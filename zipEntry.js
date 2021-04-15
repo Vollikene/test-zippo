@@ -230,7 +230,10 @@ module.exports = function (/*Buffer*/ input) {
         get name() {
             var n = _entryName.toString();
             return _isDirectory
-                ? n.substr(n.length - 1).split("/").pop()
+                ? n
+                      .substr(n.length - 1)
+                      .split("/")
+                      .pop()
                 : n.split("/").pop();
         },
         get isDirectory() {
