@@ -6,7 +6,6 @@
   "bracketSpacing": true,
   "endOfLine": "auto",
   "useTabs": false,
-
   "semi": true,
   "overrides": [
     {
